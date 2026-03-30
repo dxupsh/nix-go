@@ -32,6 +32,13 @@ stdenv.mkDerivation {
     runHook postInstall
   '';
 
+  passthru = {
+    CGO_ENABLED = "1";
+    GOOS = stdenv.hostPlatform.go.GOOS;
+    GOARCH = stdenv.hostPlatform.go.GOARCH;
+    GOROOT = placeholder "out" + "/share/go";
+  };
+
   meta = {
     description = "Go programming language (binary distribution)";
     homepage = "https://go.dev/";

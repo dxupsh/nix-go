@@ -18,8 +18,11 @@
       packages = forAllSystems (system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
+          goPackage = pkgs.callPackage ./go.nix {};
+          buildGoModule = pkgs.buildGoModule.override { go = goPackage; };
         in {
-          default = pkgs.callPackage ./go.nix {};
+          default = goPackage;
+          deadcode = pkgs.callPackage ./tools/deadcode.nix { inherit buildGoModule; };
         }
       );
     };
