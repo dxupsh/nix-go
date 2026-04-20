@@ -2,16 +2,16 @@
 
 buildGoModule rec {
   pname = "deadcode";
-  version = "0.43.0";
+  version = "0.44.0";
 
   src = fetchFromGitHub {
     owner = "golang";
     repo = "tools";
     rev = "v${version}";
-    hash = "sha256-A4c+/kWJQ6/3dIu8lR/NW9HUvsrIVs255lPfBYWK3tE=";
+    hash = "sha256-F9DyZAZdrKCrCIB6FZP0KrOwPNRLk0ZQoNMHGMHd0UY=";
   };
 
-  vendorHash = "sha256-+tJs+0exGSauZr7PBuXf0htoiLST5GVMiP2lEFpd4A4=";
+  vendorHash = "sha256-HpWkPsRJ0vCqJi9LoZcVbzeoPQ2B9ftZwuS1r47W7Sc=";
 
   subPackages = [ "cmd/deadcode" ];
 
