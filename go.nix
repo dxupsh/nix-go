@@ -1,15 +1,15 @@
 { lib, stdenv, fetchurl }:
 
 let
-  version = "1.26.1";
+  version = "1.26.2";
 
   platform = "${stdenv.hostPlatform.go.GOOS}-${stdenv.hostPlatform.go.GOARCH}";
 
   hashes = {
-    "darwin-arm64" = "353df43a7811ce284c8938b5f3c7df40b7bfb6f56cb165b150bc40b5e2dd541f";
-    "darwin-amd64" = "65773dab2f8cc4cd23d93ba6d0a805de150ca0b78378879292be0b903b8cdd08";
-    "linux-amd64"  = "031f088e5d955bab8657ede27ad4e3bc5b7c1ba281f05f245bcc304f327c987a";
-    "linux-arm64"  = "a290581cfe4fe28ddd737dde3095f3dbeb7f2e4065cab4eae44dfc53b760c2f7";
+    "darwin-arm64" = "32af1522bf3e3ff3975864780a429cc0b41d190ec7bf90faa661d6d64566e7af";
+    "darwin-amd64" = "bc3f1500d9968c36d705442d90ba91addf9271665033748b82532682e90a7966";
+    "linux-amd64"  = "990e6b4bbba816dc3ee129eaeaf4b42f17c2800b88a2166c265ac1a200262282";
+    "linux-arm64"  = "c958a1fe1b361391db163a485e21f5f228142d6f8b584f6bef89b26f66dc5b23";
   };
 in
 stdenv.mkDerivation {
