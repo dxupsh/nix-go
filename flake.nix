@@ -25,5 +25,16 @@
           deadcode = pkgs.callPackage ./tools/deadcode.nix { inherit buildGoModule; };
         }
       );
+
+      devShells = forAllSystems (system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+          goPackage = pkgs.callPackage ./go.nix {};
+        in {
+          default = pkgs.mkShell {
+            packages = [ goPackage ];
+          };
+        }
+      );
     };
 }
